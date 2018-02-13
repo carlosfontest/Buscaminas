@@ -30,7 +30,7 @@ abstract public class Casilla extends JButton {
         //this.setMaximumSize(new Dimension(25, 18));
         this.ventana = ventana;
         
-        this.setBackground(new Color(170, 170, 170));
+        this.setBackground(new Color(130, 130, 130));
         this.setFont(new Font("Consolas", 1, 12) );
         
         // Para que verifique el click derecho
@@ -80,12 +80,15 @@ abstract public class Casilla extends JButton {
         if(estado == 0){
             this.setEstado(2);
             this.setIcon(new ImageIcon(getClass().getResource("../images/flag.png")));
+            this.setEnabled(false);
         }else if(this.estado == 2){
             this.setEstado(3);
             this.setIcon(new ImageIcon(getClass().getResource("../images/question.png")));
+            this.setEnabled(false);
         }else if(this.estado == 3){
             this.setEstado(0);
             this.setIcon(null);
+            this.setEnabled(true);
         }
         
     }
