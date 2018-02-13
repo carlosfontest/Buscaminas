@@ -164,6 +164,7 @@ public class FrameJuego extends javax.swing.JFrame {
         // Cuando se pulsa el botón de arriba es porque se quiere empezar una partida nueva, asi que
         // limpiamos la interfaz, el gridLayout y lo volvemos a crear.
         getToolkit().beep();
+        CasillaVacia.reiniciarDestapadas();
         
         // Limpia los valores de la matriz de booleanos a todos falsos
         for (int i = 0; i < FrameDificultad.filas; i++) {

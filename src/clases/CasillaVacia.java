@@ -276,6 +276,7 @@ public class CasillaVacia extends Casilla {
     }
     
     private void ganar(){
+        reiniciarDestapadas();
         int respuesta = JOptionPane.showConfirmDialog(null, "           ¡¡HAS GANADO!!\nDesea jugar una nueva partida?", "¿Qué desea hacer?", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE );
         
         if(respuesta == JOptionPane.NO_OPTION){
