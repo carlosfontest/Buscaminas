@@ -133,42 +133,42 @@ public class CasillaVacia extends Casilla {
             case 1:
                 this.setText("1");
                 this.setFont(new Font("Calibri Light", 1, 14));
-                this.setForeground(Color.darkGray);
+                this.setForeground(new Color(0,0,225));
                 break;
             case 2:
                 this.setText("2");
                 this.setFont(new Font("Calibri Light", 1, 14));
-                this.setForeground(Color.blue);
+                this.setForeground(new Color(0,128,0));
                 break;
             case 3:
                 this.setText("3");
                 this.setFont(new Font("Calibri Light", 1, 14));
-                this.setForeground(Color.MAGENTA);
+                this.setForeground(new Color(255,0,0));
                 break;
             case 4:
                 this.setText("4");
                 this.setFont(new Font("Calibri Light", 1, 14));
-                this.setForeground(Color.GRAY);
+                this.setForeground(new Color(0,0,128));
                 break;
             case 5:
                 this.setText("5");
                 this.setFont(new Font("Calibri Light", 1, 14));
-                this.setForeground(Color.orange);
+                this.setForeground(new Color(128,0,0));
                 break;
             case 6:
                 this.setText("6");
                 this.setFont(new Font("Calibri Light", 1, 14));
-                this.setForeground(Color.RED);
+                this.setForeground(new Color(0,128,128));
                 break;
             case 7:
                 this.setText("7");
                 this.setFont(new Font("Calibri Light", 1, 14));
-                this.setForeground(Color.PINK);
+                this.setForeground(Color.black);
                 break;
             case 8:
                 this.setText("8");
                 this.setFont(new Font("Calibri Light", 1, 14));
-                this.setForeground(Color.BLACK);
+                this.setForeground(Color.lightGray);
                 break;
                 
             case 0:
