@@ -14,7 +14,6 @@ public class CasillaVacia extends Casilla {
         this.setFocusPainted(false);
     }
     
-    
 
     public int calcularMinasAlrededor(){
         int minas = 0;
@@ -31,8 +30,8 @@ public class CasillaVacia extends Casilla {
                 if(FrameJuego.casillasMinadas[i+1][j]== true){                  minas++;}
                 return minas;
             }
-            //Si esta en la última columna
-            if(j == (FrameDificultad.columnas-1) ){
+            // Si esta en la última columna
+            else if(j == (FrameDificultad.columnas-1) ){
                 if(FrameJuego.casillasMinadas[i][j-1]== true){         minas++;}
                 if(FrameJuego.casillasMinadas[i+1][j-1]== true){         minas++;}
                 if(FrameJuego.casillasMinadas[i+1][j]== true){           minas++;}
@@ -49,9 +48,6 @@ public class CasillaVacia extends Casilla {
             }  
         }
 
-        
-
-
 
         // Si está en la última fila
         else if( i == (FrameDificultad.filas-1) ){
@@ -63,7 +59,7 @@ public class CasillaVacia extends Casilla {
                     return minas;
                 }
                 //Si esta en la última columna
-                if(j == (FrameDificultad.columnas-1) ){
+                else if(j == (FrameDificultad.columnas-1) ){
                     if(FrameJuego.casillasMinadas[i-1][j]== true){             minas++;}
                     if(FrameJuego.casillasMinadas[i-1][j-1]== true){           minas++;}
                     if(FrameJuego.casillasMinadas[i][j-1]== true){             minas++;}
@@ -285,7 +281,7 @@ public class CasillaVacia extends Casilla {
             this.ventana.perder();
             FrameDificultad f = new FrameDificultad();
             f.setVisible(true);
-    }
+        }
     }
     
     public static void reiniciarDestapadas(){

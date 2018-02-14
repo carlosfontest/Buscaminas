@@ -161,8 +161,8 @@ public class FrameJuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Cuando se pulsa el botón de arriba es porque se quiere empezar una partida nueva, asi que
-        // limpiamos la interfaz, el gridLayout y lo volvemos a crear.
+        /* Cuando se pulsa el botón de arriba es porque se quiere empezar una partida nueva, asi que
+           limpiamos la interfaz, el gridLayout y lo volvemos a crear.*/
         getToolkit().beep();
         CasillaVacia.reiniciarDestapadas();
         
@@ -179,8 +179,8 @@ public class FrameJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
-    // Método que va a crear a tablero, inicializará la matriz de casillas y las añadirá en el Grid Layout, este
-    // método se llama al pisar el botón de reiniciar la partida y al iniciar el constructor
+    /* Método que va a crear a tablero, inicializará la matriz de casillas y las añadirá en el Grid Layout, este
+       método se llama al pisar el botón de reiniciar la partida y al iniciar el constructor*/
     private void crearTablero(){
         // Creación de la matriz de Casillas
         this.casillas = new Casilla[FrameDificultad.filas][FrameDificultad.columnas];
@@ -190,9 +190,10 @@ public class FrameJuego extends javax.swing.JFrame {
         
         
         //------------------------------------------------------------------------
-        // Este código es para cuando se termina la partida y se llama a un nuevo FrameJuego, se genere 
-        // correctamente el tablero
-        // Limpia los valores de la matriz de booleanos a todos falsos
+        /* Este código es para cuando se termina la partida y se llama a un nuevo FrameJuego, se genere 
+           correctamente el tablero
+        
+           Limpia los valores de la matriz de booleanos a todos falsos*/
         for (int i = 0; i < FrameDificultad.filas; i++) {
             for (int j = 0; j < FrameDificultad.columnas; j++) {
                 casillasMinadas[i][j] = false;
@@ -219,8 +220,9 @@ public class FrameJuego extends javax.swing.JFrame {
         
         ---------------------------------------------------------*/
         
-        // Ahora vamos a crear la casillas dependiendo de las posiciones de las minas en la matriz
-        // booleana
+        /* Ahora vamos a crear la casillas dependiendo de las posiciones de las minas en la matriz
+           booleana*/
+        
         for (int i = 0; i < FrameDificultad.filas; i++) {
             for (int j = 0; j < FrameDificultad.columnas; j++) {
                 
@@ -238,8 +240,7 @@ public class FrameJuego extends javax.swing.JFrame {
 
     
     // Este método me va a devolver una matriz donde estarán las minas
-    private boolean[][] determinarCasillasMinadas(int minas){
-        
+    private boolean[][] determinarCasillasMinadas(int minas){       
         int cont = 0;                  // Contador que ayudará a con las posiciones de los números generados
         boolean auxMatriz[][] = new boolean[FrameDificultad.filas][FrameDificultad.columnas];
         boolean bandera = false;
@@ -256,23 +257,23 @@ public class FrameJuego extends javax.swing.JFrame {
             for (int i = 0; i < FrameDificultad.filas; i++) {
                 /* Verifica que la bandera en el segundo for fue activada, si fue así, quiere decir que ya
                    se generaron las minas necesarias, entonces se sale también de este for, para finalmente 
-                   salir del bucle while
-                */
+                   salir del bucle while*/
+                
                 if(bandera == true){
                         break;}             
                 for (int j = 0; j < FrameDificultad.filas; j++) {
                     /* Se generará un numero random entre el 1 y el 100, cuando sea 33 se generará una mina
-                       en esa posición.
-                    */
+                       en esa posición.*/
+                    
                     Random random = new Random();
                     numeroRandom = random.nextInt(100)+1;
                    
-                    // Verifica si ya fueron generadas las minas necesarias, si se generaron se cambia la
-                    // bandera a true y se hace un break, el cual sale del segundo for.
+                    /* Verifica si ya fueron generadas las minas necesarias, si se generaron se cambia la
+                       bandera a true y se hace un break, el cual sale del segundo for.*/
                     if(cont == minas){
                         bandera = true;
                         break;
-                    }else if( auxMatriz[i][j] == false ){ // Verifica que en la posicion [i][j] la amtriz sea vacía
+                    }else if( auxMatriz[i][j] == false ){ // Verifica que en la posicion [i][j] la matriz sea vacía
                         if(numeroRandom == 33){
                             auxMatriz[i][j] = true;  // Se genera una mina
                             cont++;  // Aumento en el contador de minas
@@ -312,8 +313,7 @@ public class FrameJuego extends javax.swing.JFrame {
          }  
      }
      
-     public void flagearMinadas(){
-         
+     public void flagearMinadas(){        
         for (int i = 0; i < FrameDificultad.filas; i++) {
             for (int j = 0; j < FrameDificultad.columnas; j++) {
 
@@ -322,13 +322,8 @@ public class FrameJuego extends javax.swing.JFrame {
                 }  
             }
         }  
-         
-         
-         
      }
     
- 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDesktopPane1;

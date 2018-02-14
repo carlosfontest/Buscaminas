@@ -43,25 +43,16 @@ abstract public class Casilla extends JButton {
             }
 
             @Override
-            public void mousePressed(MouseEvent me) {
-            }
-
+            public void mousePressed(MouseEvent me) {}         
             @Override
-            public void mouseReleased(MouseEvent me) {
-            }
-
+            public void mouseReleased(MouseEvent me) {}
             @Override
-            public void mouseEntered(MouseEvent me) {
-            }
-
+            public void mouseEntered(MouseEvent me) {}
             @Override
-            public void mouseExited(MouseEvent me) {
-            }
+            public void mouseExited(MouseEvent me) {}
             
         };
         this.addMouseListener(mouseListener);
- 
-       
         
         this.addActionListener(new ActionListener() {
             
@@ -90,7 +81,6 @@ abstract public class Casilla extends JButton {
             this.setIcon(null);
             this.setEnabled(true);
         }
-        
     }
 
     public int getEstado() {

@@ -2,7 +2,7 @@ package clases;
 
 public class FrameCarga extends javax.swing.JFrame {
 
-    // Frama con una progressBar de carga, es meramente estética
+    // Frame con una progressBar de carga, es meramente estética
     public FrameCarga() {
         initComponents();
         this.setLocationRelativeTo(null);

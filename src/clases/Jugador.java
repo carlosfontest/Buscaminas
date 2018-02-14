@@ -7,7 +7,6 @@ public class Jugador {
     public Jugador(String username) {
         this.username = username;
     }
-    
 
     public String getUsername() {
         return username;

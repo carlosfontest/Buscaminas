@@ -19,8 +19,6 @@ public class CasillaMinada extends Casilla {
     
     public void perder(){               
         
-
-        
         int respuesta = JOptionPane.showConfirmDialog(null, "Desea jugar una nueva partida?", "¿Qué desea hacer?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE );
         
         if(respuesta == JOptionPane.NO_OPTION){

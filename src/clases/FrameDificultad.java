@@ -411,7 +411,6 @@ public class FrameDificultad extends javax.swing.JFrame {
             textFieldCasillas.setText("");
             break;
         }
-
     }//GEN-LAST:event_comboBoxDificultadActionPerformed
  
 
