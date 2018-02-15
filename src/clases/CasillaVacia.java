@@ -10,11 +10,12 @@ public class CasillaVacia extends Casilla {
 
     public CasillaVacia(int coorX, int coorY, FrameJuego ventana) {
         super(coorX, coorY, ventana);
-        this.minasAlrededor = calcularMinasAlrededor();
         this.setFocusPainted(false);
     }
     
 
+    /* Método que hace return de la cantidad de minas que hay alrededor de cada casilla, es llamado en el 
+       FrameJuego*/
     public int calcularMinasAlrededor(){
         int minas = 0;
         int i = this.coorX;
@@ -25,25 +26,25 @@ public class CasillaVacia extends Casilla {
         if(i == 0){
             // Si esta en la primera columna
             if(j == 0){
-                if(FrameJuego.casillasMinadas[i][j+1]== true){                  minas++;}
-                if(FrameJuego.casillasMinadas[i+1][j+1]== true){                  minas++;}
-                if(FrameJuego.casillasMinadas[i+1][j]== true){                  minas++;}
+                if(FrameJuego.casillas[i][j+1] instanceof CasillaMinada){                  minas++;}
+                if(FrameJuego.casillas[i+1][j+1] instanceof CasillaMinada){                  minas++;}
+                if(FrameJuego.casillas[i+1][j] instanceof CasillaMinada){                  minas++;}
                 return minas;
             }
             // Si esta en la última columna
             else if(j == (FrameDificultad.columnas-1) ){
-                if(FrameJuego.casillasMinadas[i][j-1]== true){         minas++;}
-                if(FrameJuego.casillasMinadas[i+1][j-1]== true){         minas++;}
-                if(FrameJuego.casillasMinadas[i+1][j]== true){           minas++;}
+                if(FrameJuego.casillas[i][j-1] instanceof CasillaMinada){         minas++;}
+                if(FrameJuego.casillas[i+1][j-1] instanceof CasillaMinada){         minas++;}
+                if(FrameJuego.casillas[i+1][j] instanceof CasillaMinada){           minas++;}
                 return minas;
             }
             // Si está entre la primera y la última columna  
             else{
-                if(FrameJuego.casillasMinadas[i][j-1]== true){                minas++;}
-                if(FrameJuego.casillasMinadas[i][j+1]== true){                minas++;}
-                if(FrameJuego.casillasMinadas[i+1][j-1]== true){              minas++;}
-                if(FrameJuego.casillasMinadas[i+1][j]== true){                minas++;}
-                if(FrameJuego.casillasMinadas[i+1][j+1]== true){              minas++;}
+                if(FrameJuego.casillas[i][j-1] instanceof CasillaMinada){                minas++;}
+                if(FrameJuego.casillas[i][j+1] instanceof CasillaMinada){                minas++;}
+                if(FrameJuego.casillas[i+1][j-1] instanceof CasillaMinada){              minas++;}
+                if(FrameJuego.casillas[i+1][j] instanceof CasillaMinada){                minas++;}
+                if(FrameJuego.casillas[i+1][j+1] instanceof CasillaMinada){              minas++;}
                 return minas;
             }  
         }
@@ -53,25 +54,25 @@ public class CasillaVacia extends Casilla {
         else if( i == (FrameDificultad.filas-1) ){
                 // Si esta en la primera columna
                 if(j == 0){
-                    if(FrameJuego.casillasMinadas[i-1][j]== true){             minas++;}
-                    if(FrameJuego.casillasMinadas[i-1][j+1]== true){           minas++;}
-                    if(FrameJuego.casillasMinadas[i][j+1]== true){             minas++;}
+                    if(FrameJuego.casillas[i-1][j] instanceof CasillaMinada){             minas++;}
+                    if(FrameJuego.casillas[i-1][j+1] instanceof CasillaMinada){           minas++;}
+                    if(FrameJuego.casillas[i][j+1] instanceof CasillaMinada){             minas++;}
                     return minas;
                 }
                 //Si esta en la última columna
                 else if(j == (FrameDificultad.columnas-1) ){
-                    if(FrameJuego.casillasMinadas[i-1][j]== true){             minas++;}
-                    if(FrameJuego.casillasMinadas[i-1][j-1]== true){           minas++;}
-                    if(FrameJuego.casillasMinadas[i][j-1]== true){             minas++;}
+                    if(FrameJuego.casillas[i-1][j] instanceof CasillaMinada){             minas++;}
+                    if(FrameJuego.casillas[i-1][j-1] instanceof CasillaMinada){           minas++;}
+                    if(FrameJuego.casillas[i][j-1] instanceof CasillaMinada){             minas++;}
                     return minas; 
                 }
                 // Si está entre la primera y la última columna
                 else{
-                    if(FrameJuego.casillasMinadas[i][j-1]== true){             minas++;}
-                    if(FrameJuego.casillasMinadas[i][j+1]== true){             minas++;}
-                    if(FrameJuego.casillasMinadas[i-1][j-1]== true){           minas++;}
-                    if(FrameJuego.casillasMinadas[i-1][j]== true){             minas++;}
-                    if(FrameJuego.casillasMinadas[i-1][j+1]== true){           minas++;}
+                    if(FrameJuego.casillas[i][j-1] instanceof CasillaMinada){             minas++;}
+                    if(FrameJuego.casillas[i][j+1] instanceof CasillaMinada){             minas++;}
+                    if(FrameJuego.casillas[i-1][j-1] instanceof CasillaMinada){           minas++;}
+                    if(FrameJuego.casillas[i-1][j] instanceof CasillaMinada){             minas++;}
+                    if(FrameJuego.casillas[i-1][j+1] instanceof CasillaMinada){           minas++;}
                     return minas;    
                 }
             }
@@ -79,48 +80,53 @@ public class CasillaVacia extends Casilla {
         
         // Si está en la primera columna excepto en las posiciones esquinísticas
         else if(j == 0   &&  i!=0    &&  i!=(FrameDificultad.filas-1)){
-            if(FrameJuego.casillasMinadas[i+1][j]== true){                     minas++;}
-            if(FrameJuego.casillasMinadas[i-1][j]== true){                     minas++;}
-            if(FrameJuego.casillasMinadas[i+1][j+1]== true){                   minas++;}
-            if(FrameJuego.casillasMinadas[i-1][j+1]== true){                   minas++;}
-            if(FrameJuego.casillasMinadas[i][j+1]== true){                     minas++;}
+            if(FrameJuego.casillas[i+1][j] instanceof CasillaMinada){                     minas++;}
+            if(FrameJuego.casillas[i-1][j] instanceof CasillaMinada){                     minas++;}
+            if(FrameJuego.casillas[i+1][j+1] instanceof CasillaMinada){                   minas++;}
+            if(FrameJuego.casillas[i-1][j+1] instanceof CasillaMinada){                   minas++;}
+            if(FrameJuego.casillas[i][j+1] instanceof CasillaMinada){                     minas++;}
             return minas;  
         }
 
 
         // Si está en la última columna excepto en las posiciones esquinísticas
         else if(j == (FrameDificultad.columnas-1) &&  i!=0    &&  i!=(FrameDificultad.filas-1)){
-            if(FrameJuego.casillasMinadas[i+1][j]== true){                     minas++;}
-            if(FrameJuego.casillasMinadas[i-1][j]== true){                     minas++;}
-            if(FrameJuego.casillasMinadas[i+1][j-1]== true){                   minas++;}
-            if(FrameJuego.casillasMinadas[i-1][j-1]== true){                   minas++;}
-            if(FrameJuego.casillasMinadas[i][j-1]== true){                     minas++;}
+            if(FrameJuego.casillas[i+1][j] instanceof CasillaMinada){                     minas++;}
+            if(FrameJuego.casillas[i-1][j] instanceof CasillaMinada){                     minas++;}
+            if(FrameJuego.casillas[i+1][j-1] instanceof CasillaMinada){                   minas++;}
+            if(FrameJuego.casillas[i-1][j-1] instanceof CasillaMinada){                   minas++;}
+            if(FrameJuego.casillas[i][j-1] instanceof CasillaMinada){                     minas++;}
             return minas;  
         }
 
 
         // Si está en cualquier posición del centro
         else{
-            if(FrameJuego.casillasMinadas[i-1][j-1]== true){                   minas++;}
-            if(FrameJuego.casillasMinadas[i-1][j]== true){                     minas++;}
-            if(FrameJuego.casillasMinadas[i-1][j+1]== true){                   minas++;}
-            if(FrameJuego.casillasMinadas[i][j-1]== true){                     minas++;}
-            if(FrameJuego.casillasMinadas[i][j+1]== true){                     minas++;}
-            if(FrameJuego.casillasMinadas[i+1][j-1]== true){                   minas++;}
-            if(FrameJuego.casillasMinadas[i+1][j]== true){                     minas++;}
-            if(FrameJuego.casillasMinadas[i+1][j+1]== true){                   minas++;}
+            if(FrameJuego.casillas[i-1][j-1] instanceof CasillaMinada){                   minas++;}
+            if(FrameJuego.casillas[i-1][j] instanceof CasillaMinada){                     minas++;}
+            if(FrameJuego.casillas[i-1][j+1] instanceof CasillaMinada){                   minas++;}
+            if(FrameJuego.casillas[i][j-1] instanceof CasillaMinada){                     minas++;}
+            if(FrameJuego.casillas[i][j+1] instanceof CasillaMinada){                     minas++;}
+            if(FrameJuego.casillas[i+1][j-1] instanceof CasillaMinada){                   minas++;}
+            if(FrameJuego.casillas[i+1][j] instanceof CasillaMinada){                     minas++;}
+            if(FrameJuego.casillas[i+1][j+1] instanceof CasillaMinada){                   minas++;}
             return minas;  
         }
+    }
+
+    public void setMinasAlrededor(int minasAlrededor) {
+        this.minasAlrededor = minasAlrededor;
     }
 
     @Override
     public void destapar() {
         
+        // Se verifica si ya esta destapada, si es así se sale del método
         if(this.estado != 0){
             return;
         }
         
-     
+        // Se cambia el color de fondo de la mina destapada y se cambia el estado a 1 (destapada)
         this.setBackground(new Color(240, 240, 240));
         this.estado = 1;
         
@@ -171,6 +177,8 @@ public class CasillaVacia extends Casilla {
                 
                 int i = this.coorX;
                 int j = this.coorY;
+                
+                // ------------Se procede a llamar recursivamente al método destapar----------
                 
                 // Si está en la primera fila
                 if(i == 0){
@@ -258,19 +266,21 @@ public class CasillaVacia extends Casilla {
                 break;
         }
         
+        // Se suma 1 al contador de minas destapadas de la partida para saber cuando el jugador ganó
         destapadas++;
             
-        if(destapadas == ( ((FrameDificultad.filas) * (FrameDificultad.columnas)) - (FrameDificultad.minas) ) ){
-            
+        /* Se verifica si el jugador ganó, si es así todas las minas pasan a tener la banderita, se reinicia el contador
+          de destapadas y se llama al método ganar*/
+        if(destapadas == ( ((FrameDificultad.filas) * (FrameDificultad.columnas)) - (FrameDificultad.minas) ) ){           
             this.ventana.flagearMinadas();
             
             destapadas = 0;
             this.ganar();
-            
         }
         
     }
     
+    // Lanza en pantalla un JOptionPane para saber que querrá hacer el jugador después de ganar
     private void ganar(){
         reiniciarDestapadas();
         int respuesta = JOptionPane.showConfirmDialog(null, "           ¡¡HAS GANADO!!\nDesea jugar una nueva partida?", "¿Qué desea hacer?", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE );
@@ -284,6 +294,7 @@ public class CasillaVacia extends Casilla {
         }
     }
     
+    // Reinicia el contador de casillas destapadas
     public static void reiniciarDestapadas(){
         destapadas = 0;
     }

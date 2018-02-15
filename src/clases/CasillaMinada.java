@@ -9,16 +9,15 @@ public class CasillaMinada extends Casilla {
     }
 
     @Override
-    public void destapar() {
+    public void destapar(){
         this.estado = 1;
         CasillaVacia.reiniciarDestapadas();
         ventana.destaparMinadas(this.coorX, this.coorY);
         perder();
-        
     }
     
-    public void perder(){               
-        
+    // Lanza en pantalla un JOptionPane para saber que querrá hacer el jugador después de perder
+    public void perder(){                      
         int respuesta = JOptionPane.showConfirmDialog(null, "                ¡Perdiste!\nDesea jugar una nueva partida?", "¿Qué desea hacer?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE );
         
         if(respuesta == JOptionPane.NO_OPTION){
@@ -27,7 +26,6 @@ public class CasillaMinada extends Casilla {
             this.ventana.perder();
             FrameDificultad f = new FrameDificultad();
             f.setVisible(true);
-            
         } 
     }
 }

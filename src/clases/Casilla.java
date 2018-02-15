@@ -90,6 +90,7 @@ abstract public class Casilla extends JButton {
     public void setEstado(int estado) {
         this.estado = estado;
     }
+    
 }
     
    

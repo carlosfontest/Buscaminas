@@ -220,8 +220,7 @@ public class FrameJuego extends javax.swing.JFrame {
         
         ---------------------------------------------------------*/
         
-        /* Ahora vamos a crear la casillas dependiendo de las posiciones de las minas en la matriz
-           booleana*/
+        /* Se crean la casillas dependiendo de las posiciones de las minas en la matriz booleana*/
         
         for (int i = 0; i < FrameDificultad.filas; i++) {
             for (int j = 0; j < FrameDificultad.columnas; j++) {
@@ -232,6 +231,16 @@ public class FrameJuego extends javax.swing.JFrame {
                 }else{
                     casillas[i][j] = new CasillaVacia(i, j, this);
                     jPanel4.add(casillas[i][j]);
+                }
+            }
+        }
+        
+        // Se llama al método calcularMinasAlrededor para calcular dichos numero y setearlo con el setMinasAlrededor
+        for (int i = 0; i < FrameDificultad.filas; i++) {
+            for (int j = 0; j < FrameDificultad.columnas; j++) {
+                
+                if(casillas[i][j] instanceof CasillaVacia){
+                    ((CasillaVacia)casillas[i][j]).setMinasAlrededor( ((CasillaVacia)casillas[i][j]).calcularMinasAlrededor() );
                 }
             }
         }
@@ -291,29 +300,30 @@ public class FrameJuego extends javax.swing.JFrame {
          cuando en la de booleanos sea True */
     }
     
-     public void perder(){
+    public void perder(){
         this.dispose();
     }
      
+    /* Método que procede a destapar todas las minas que hay en el tablero, se llama desde el método destapar() de
+      casillaMinada*/
+    public void destaparMinadas(int x, int y){
+        for (int i = 0; i < FrameDificultad.filas; i++) {
+            for (int j = 0; j < FrameDificultad.columnas; j++) {
+                if(i == x && j == y){
+                    casillas[i][j].setIcon(new ImageIcon(getClass().getResource("../images/minadoActual.png")));
+                    casillas[i][j].setBackground(new Color(240, 240, 240));
+                }
+                else if(casillas[i][j] instanceof CasillaMinada){
+                    casillas[i][j].setIcon(new ImageIcon(getClass().getResource("../images/minado.png")));
+                    casillas[i][j].setBackground(new Color(240, 240, 240));
+                }  
+            }
+        }  
+    }
      
-     public void destaparMinadas(int x, int y){
-         for (int i = 0; i < FrameDificultad.filas; i++) {
-             for (int j = 0; j < FrameDificultad.columnas; j++) {
-                 
-                 
-                  if(i == x && j == y){
-                      casillas[i][j].setIcon(new ImageIcon(getClass().getResource("../images/minadoActual.png")));
-                      casillas[i][j].setBackground(new Color(240, 240, 240));
-                  }
-                  else if(casillas[i][j] instanceof CasillaMinada){
-                      casillas[i][j].setIcon(new ImageIcon(getClass().getResource("../images/minado.png")));
-                      casillas[i][j].setBackground(new Color(240, 240, 240));
-                  }  
-             }
-         }  
-     }
-     
-     public void flagearMinadas(){        
+    /* Método que se llama cuando se gana desde CasillaVacia y lo que hace el marcar con una bandera todas las minas
+      del tablero*/
+    public void flagearMinadas(){        
         for (int i = 0; i < FrameDificultad.filas; i++) {
             for (int j = 0; j < FrameDificultad.columnas; j++) {
 
@@ -322,7 +332,7 @@ public class FrameJuego extends javax.swing.JFrame {
                 }  
             }
         }  
-     }
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

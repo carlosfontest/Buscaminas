@@ -139,7 +139,6 @@ public class FrameIngreso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarActionPerformed
-                
         // Verificación de que textField contenga un username
         if(textFieldUser.getText().equals("") == false && textFieldUser.getText().equals("Usuario...") == false){
             nombre = textFieldUser.getText(); 

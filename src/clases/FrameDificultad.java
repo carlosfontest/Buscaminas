@@ -18,8 +18,7 @@ public class FrameDificultad extends javax.swing.JFrame {
         // Como siempre va a empezar seleccionado el nivel Fácil, seteamos desde el principio que no se puedan modificar
         textFieldFilas.setEditable(false);
         textFieldColumnas.setEditable(false);
-        textFieldMinas.setEditable(false);
-        
+        textFieldMinas.setEditable(false);      
     }
 
     @SuppressWarnings("unchecked")
@@ -232,8 +231,6 @@ public class FrameDificultad extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldCasillasActionPerformed
 
     private void botonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarActionPerformed
-        // Cuando se pisa el boton Continuar pasará esto
-
         // Se crea un objeto de FrameCarga
         FrameCarga carga = new FrameCarga();
 
@@ -270,7 +267,7 @@ public class FrameDificultad extends javax.swing.JFrame {
                                 carga.loadingBar.setValue(i);
 
                                 if(i==100){
-                                    Thread.sleep(1300);
+                                    Thread.sleep(1000);
                                 }
                             }
                             carga.dispose();
@@ -319,7 +316,6 @@ public class FrameDificultad extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldColumnasKeyTyped
 
     private void textFieldColumnasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldColumnasActionPerformed
-
     }//GEN-LAST:event_textFieldColumnasActionPerformed
 
     private void textFieldColumnasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldColumnasMouseReleased
@@ -355,15 +351,12 @@ public class FrameDificultad extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldFilasMouseReleased
 
     private void textFieldFilasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldFilasMouseExited
-
     }//GEN-LAST:event_textFieldFilasMouseExited
 
     private void textFieldFilasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldFilasMouseMoved
-
     }//GEN-LAST:event_textFieldFilasMouseMoved
 
     private void textFieldFilasMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldFilasMouseDragged
-
     }//GEN-LAST:event_textFieldFilasMouseDragged
 
     private void comboBoxDificultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxDificultadActionPerformed
