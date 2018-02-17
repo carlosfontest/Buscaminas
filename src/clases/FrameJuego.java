@@ -44,6 +44,7 @@ public class FrameJuego extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
+        textFieldMinasContador = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -55,6 +56,16 @@ public class FrameJuego extends javax.swing.JFrame {
         jDesktopPane1.setBackground(new java.awt.Color(204, 204, 204));
 
         jPanel1.setBackground(new java.awt.Color(64, 64, 64));
+
+        textFieldMinasContador.setBackground(new java.awt.Color(64, 64, 64));
+        textFieldMinasContador.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        textFieldMinasContador.setForeground(new java.awt.Color(255, 255, 255));
+        textFieldMinasContador.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Minas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Consolas", 0, 10), new java.awt.Color(255, 255, 255))); // NOI18N
+        textFieldMinasContador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldMinasContadorActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_Life_Cycle_30px.png"))); // NOI18N
@@ -71,16 +82,22 @@ public class FrameJuego extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(134, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(textFieldMinasContador, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(textFieldMinasContador, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
@@ -100,7 +117,7 @@ public class FrameJuego extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(4, 4, 4)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                 .addGap(4, 4, 4))
         );
 
@@ -178,10 +195,15 @@ public class FrameJuego extends javax.swing.JFrame {
         crearTablero();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void textFieldMinasContadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldMinasContadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldMinasContadorActionPerformed
+
     
     /* Método que va a crear a tablero, inicializará la matriz de casillas y las añadirá en el Grid Layout, este
        método se llama al pisar el botón de reiniciar la partida y al iniciar el constructor*/
     private void crearTablero(){
+        textFieldMinasContador.setText(Integer.toString(FrameDificultad.minas));
         // Creación de la matriz de Casillas
         this.casillas = new Casilla[FrameDificultad.filas][FrameDificultad.columnas];
 
@@ -323,7 +345,8 @@ public class FrameJuego extends javax.swing.JFrame {
      
     /* Método que se llama cuando se gana desde CasillaVacia y lo que hace el marcar con una bandera todas las minas
       del tablero*/
-    public void flagearMinadas(){        
+    public void flagearMinadas(){  
+        textFieldMinasContador.setText("0");
         for (int i = 0; i < FrameDificultad.filas; i++) {
             for (int j = 0; j < FrameDificultad.columnas; j++) {
 
@@ -343,5 +366,6 @@ public class FrameJuego extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
+    public javax.swing.JTextField textFieldMinasContador;
     // End of variables declaration//GEN-END:variables
 }

@@ -67,12 +67,19 @@ abstract public class Casilla extends JButton {
     abstract public void destapar();
     
     public void cambiarEstado(){
+        int numero;
+        String numero2;
+        numero = Integer.parseInt(ventana.textFieldMinasContador.getText());
         
-        if(estado == 0){
+        if(estado == 0){          
+            numero2 = String.valueOf(numero - 1);
+            ventana.textFieldMinasContador.setText(numero2);
             this.setEstado(2);
             this.setIcon(new ImageIcon(getClass().getResource("../images/flag.png")));
             this.setEnabled(false);
         }else if(this.estado == 2){
+            numero2 = String.valueOf(numero + 1);
+            ventana.textFieldMinasContador.setText(numero2);
             this.setEstado(3);
             this.setIcon(new ImageIcon(getClass().getResource("../images/question.png")));
             this.setEnabled(false);
