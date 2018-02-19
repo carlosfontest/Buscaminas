@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
 
 public class CasillaVacia extends Casilla {
     private int minasAlrededor;
-    static private int destapadas;
 
     public CasillaVacia(int coorX, int coorY, FrameJuego ventana) {
         super(coorX, coorY, ventana);
@@ -267,14 +266,14 @@ public class CasillaVacia extends Casilla {
         }
         
         // Se suma 1 al contador de minas destapadas de la partida para saber cuando el jugador ganó
-        destapadas++;
+        ventana.destapadas++;
             
         /* Se verifica si el jugador ganó, si es así todas las minas pasan a tener la banderita, se reinicia el contador
           de destapadas y se llama al método ganar*/
-        if(destapadas == ( ((FrameDificultad.filas) * (FrameDificultad.columnas)) - (FrameDificultad.minas) ) ){           
+        if(ventana.destapadas == ( ((FrameDificultad.filas) * (FrameDificultad.columnas)) - (FrameDificultad.minas) ) ){           
             this.ventana.flagearMinadas();
             
-            destapadas = 0;
+            ventana.destapadas = 0;
             this.ganar();
         }
         
@@ -282,7 +281,7 @@ public class CasillaVacia extends Casilla {
     
     // Lanza en pantalla un JOptionPane para saber que querrá hacer el jugador después de ganar
     private void ganar(){
-        reiniciarDestapadas();
+        ventana.reiniciarDestapadas();
         int respuesta = JOptionPane.showConfirmDialog(null, "           ¡¡HAS GANADO!!\nDesea jugar una nueva partida?", "¿Qué desea hacer?", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE );
         
         if(respuesta == JOptionPane.NO_OPTION){
@@ -293,10 +292,6 @@ public class CasillaVacia extends Casilla {
             f.setVisible(true);
         }
     }
-    
-    // Reinicia el contador de casillas destapadas
-    public static void reiniciarDestapadas(){
-        destapadas = 0;
-    }
+
     
 }

@@ -11,7 +11,7 @@ public class CasillaMinada extends Casilla {
     @Override
     public void destapar(){
         this.estado = 1;
-        CasillaVacia.reiniciarDestapadas();
+        ventana.reiniciarDestapadas();
         ventana.destaparMinadas(this.coorX, this.coorY);
         perder();
     }

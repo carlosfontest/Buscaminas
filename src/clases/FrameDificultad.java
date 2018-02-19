@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class FrameDificultad extends javax.swing.JFrame {
-    static int filas, columnas, minas;
+    public static int filas, columnas, minas;
 
     public FrameDificultad() {
         initComponents();

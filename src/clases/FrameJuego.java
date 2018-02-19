@@ -8,8 +8,9 @@ import javax.swing.ImageIcon;
 public class FrameJuego extends javax.swing.JFrame {
     
     // Matriz de tipo Casilla, la cual tendrá todas las casillas que estarán en el GridLayout
-    static Casilla casillas[][];
-    static boolean casillasMinadas[][];
+    public static Casilla casillas[][];
+    private boolean casillasMinadas[][];
+    public static int destapadas;
 
     public FrameJuego() {
         initComponents();
@@ -181,7 +182,7 @@ public class FrameJuego extends javax.swing.JFrame {
         /* Cuando se pulsa el botón de arriba es porque se quiere empezar una partida nueva, asi que
            limpiamos la interfaz, el gridLayout y lo volvemos a crear.*/
         getToolkit().beep();
-        CasillaVacia.reiniciarDestapadas();
+        this.reiniciarDestapadas();
         
         // Limpia los valores de la matriz de booleanos a todos falsos
         for (int i = 0; i < FrameDificultad.filas; i++) {
@@ -355,6 +356,13 @@ public class FrameJuego extends javax.swing.JFrame {
                 }  
             }
         }  
+    }
+    
+    
+        
+    // Reinicia el contador de casillas destapadas
+    public void reiniciarDestapadas(){
+        destapadas = 0;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
