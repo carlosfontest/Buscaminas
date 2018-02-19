@@ -9,7 +9,7 @@ public class FrameDificultad extends javax.swing.JFrame {
     public FrameDificultad() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("../images/mine.png")).getImage());
-        this.setTitle("Buscaminas  " + "  ||    Bienvenido " + FrameIngreso.nombre);
+        this.setTitle("Buscaminas  " + "  ||    Bienvenido " + FrameIngreso.jugador.getUsername());
         this.setResizable(false);
         this.setSize(530, 250);
         this.setLocationRelativeTo(null);

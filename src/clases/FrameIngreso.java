@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class FrameIngreso extends javax.swing.JFrame {
-    static public String nombre;
+    static public Jugador jugador;
 
     public FrameIngreso() {
         initComponents();
@@ -139,12 +139,13 @@ public class FrameIngreso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarActionPerformed
+        String nombre;
         // Verificación de que textField contenga un username
         if(textFieldUser.getText().equals("") == false && textFieldUser.getText().equals("Usuario...") == false){
             nombre = textFieldUser.getText(); 
             
             // Creación del objeto Jugador
-            Jugador jugadorActual = new Jugador(nombre);
+            jugador = new Jugador(nombre);
             
             // Se oculta el FrameIngreso y se crea un objeto de tipo FrameJuego y se hace visible           
             this.dispose();
