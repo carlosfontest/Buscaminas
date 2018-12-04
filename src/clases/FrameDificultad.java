@@ -8,7 +8,7 @@ public class FrameDificultad extends javax.swing.JFrame {
 
     public FrameDificultad() {
         initComponents();
-        setIconImage(new ImageIcon(getClass().getResource("../images/mine.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("images/mine.png")).getImage());
         this.setTitle("Buscaminas  " + "  ||    Bienvenido " + FrameIngreso.jugador.getUsername());
         this.setResizable(false);
         this.setSize(530, 250);
@@ -45,7 +45,7 @@ public class FrameDificultad extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 40)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/SeleccioneDificultad.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/SeleccioneDificultad.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -165,7 +165,7 @@ public class FrameDificultad extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Copyright.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/Copyright.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

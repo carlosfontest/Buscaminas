@@ -1,9 +1,12 @@
 package clases;
 
+import javax.swing.ImageIcon;
+
 public class FrameCarga extends javax.swing.JFrame {
 
     // Frame con una progressBar de carga, es meramente estética
     public FrameCarga() {
+        setIconImage(new ImageIcon(getClass().getResource("images/mine.png")).getImage());
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -29,7 +32,7 @@ public class FrameCarga extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Consolas", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ColocandoMinas.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/ColocandoMinas.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -49,7 +52,7 @@ public class FrameCarga extends javax.swing.JFrame {
         loadingText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loadingText.setText("--");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Copyright.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/Copyright.png"))); // NOI18N
 
         jDesktopPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(loadingBar, javax.swing.JLayeredPane.DEFAULT_LAYER);

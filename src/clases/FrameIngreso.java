@@ -8,7 +8,7 @@ public class FrameIngreso extends javax.swing.JFrame {
 
     public FrameIngreso() {
         initComponents();
-        setIconImage(new ImageIcon(getClass().getResource("../images/mine.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("images/mine.png")).getImage());
         this.setSize(402, 169);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -81,7 +81,7 @@ public class FrameIngreso extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(51, 0, 153));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IngreseUser.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/IngreseUser.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -121,7 +121,7 @@ public class FrameIngreso extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Copyright.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/Copyright.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

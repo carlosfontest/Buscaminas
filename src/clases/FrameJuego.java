@@ -15,7 +15,7 @@ public class FrameJuego extends javax.swing.JFrame {
     public FrameJuego() {
         initComponents();
         
-        setIconImage(new ImageIcon(getClass().getResource("../images/mine.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("images/mine.png")).getImage());
         
         if(FrameDificultad.comboBoxDificultad.getSelectedItem().toString().equals("Fácil")){
             this.setLocation(520, 200);
@@ -69,7 +69,7 @@ public class FrameJuego extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_Life_Cycle_30px.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/icons8_Life_Cycle_30px.png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
         jButton1.setFocusPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +122,7 @@ public class FrameJuego extends javax.swing.JFrame {
                 .addGap(4, 4, 4))
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CopyrightPeque.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/CopyrightPeque.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -333,11 +333,11 @@ public class FrameJuego extends javax.swing.JFrame {
         for (int i = 0; i < FrameDificultad.filas; i++) {
             for (int j = 0; j < FrameDificultad.columnas; j++) {
                 if(i == x && j == y){
-                    casillas[i][j].setIcon(new ImageIcon(getClass().getResource("../images/minadoActual.png")));
+                    casillas[i][j].setIcon(new ImageIcon(getClass().getResource("images/minadoActual.png")));
                     casillas[i][j].setBackground(new Color(240, 240, 240));
                 }
                 else if(casillas[i][j] instanceof CasillaMinada){
-                    casillas[i][j].setIcon(new ImageIcon(getClass().getResource("../images/minado.png")));
+                    casillas[i][j].setIcon(new ImageIcon(getClass().getResource("images/minado.png")));
                     casillas[i][j].setBackground(new Color(240, 240, 240));
                 }  
             }
@@ -352,7 +352,7 @@ public class FrameJuego extends javax.swing.JFrame {
             for (int j = 0; j < FrameDificultad.columnas; j++) {
 
                 if(casillas[i][j] instanceof CasillaMinada){
-                    casillas[i][j].setIcon(new ImageIcon(getClass().getResource("../images/flag.png")));
+                    casillas[i][j].setIcon(new ImageIcon(getClass().getResource("images/flag.png")));
                 }  
             }
         }  

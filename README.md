@@ -3,6 +3,9 @@
 ## ***Introducción***
 Juego clásico de *Buscaminas*, con las mismas funcionalidades que tiene el juego original de Windows. El objetivo del juego es *despejar* un campo de minas *sin detonar* ninguna.
 
+## ***¿Cómo Jugar?***
+Descarga el repositorio y ahí estará el instalador del juego, haz click en él, sigue las instrucciones, instla el juego y ejecutalo.
+
 
 ## ***ScreenShots***
 
